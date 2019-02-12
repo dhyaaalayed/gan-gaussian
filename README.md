@@ -37,6 +37,7 @@ it consists of an input layer of 2 neurons for the training data, 3 hidden layer
 Generator tries to maximize the probability of the generated data
 <p><img width="237" alt="image" src="https://user-images.githubusercontent.com/26183913/52648830-6ea2d900-2ee7-11e9-9609-b04c49db101d.png"></p>
 Tensorflow code of the generator loss function:
+
 ```
 g_loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=D_logit_fake, labels=tf.ones_like(D_logit_fake)))
 ```
@@ -45,6 +46,7 @@ g_loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=D_logit_f
 Discriminator tries to minimize the probability of the generated data and to maximize the probability of the real data
 <p><img width="421" alt="image" src="https://user-images.githubusercontent.com/26183913/52648447-dc9ad080-2ee6-11e9-9e7e-6200bdfb05a5.png"></p>
 Tensorflow code of the discriminator loss function:
+
 ```
 D_loss_real = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=D_logit_real, labels=tf.ones_like(D_logit_real)))
 D_loss_fake = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=D_logit_fake, labels=tf.zeros_like(D_logit_fake)))
