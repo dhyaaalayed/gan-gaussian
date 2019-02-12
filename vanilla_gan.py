@@ -67,7 +67,7 @@ def Generator(z_input):
     g_y3 = tf.nn.relu((tf.matmul(g_y2, g_w3) + g_b3), name = 'generator_activation_layer3')
     
     # Generator output layer
-    tf.matmul(g_y3, g_w4) + g_b4
+    g_y4 = tf.matmul(g_y3, g_w4) + g_b4
     return g_y4
 
 theta_g = [g_w1, g_w2, g_w3, g_w4, g_b1, g_b2, g_b3, g_b4]
